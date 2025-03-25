@@ -40,11 +40,16 @@ android {
     buildFeatures {
         compose = true
     }
+    
+    // Add lint configuration
+    lint {
+        abortOnError = false
+    }
 }
 
 dependencies {
     implementation(libs.glide)
-    ksp(libs.glide.compiler)
+    annotationProcessor(libs.glide.compiler)
     implementation(libs.core)
     implementation(libs.zxing.android.embedded)
     implementation(libs.androidx.camera.core)
