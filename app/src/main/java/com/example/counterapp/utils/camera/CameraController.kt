@@ -3,10 +3,8 @@ package com.example.counterapp.utils.camera
 import android.content.Context
 import androidx.lifecycle.LifecycleOwner
 import com.example.counterapp.viewmodel.MainViewModel
-import javax.inject.Inject
 
-
-class CameraController @Inject constructor(
+class CameraController(
     private val cameraManager: CameraManager,
     private val mainViewModel: MainViewModel
 ) {

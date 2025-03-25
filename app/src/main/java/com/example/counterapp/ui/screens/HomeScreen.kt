@@ -7,7 +7,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.navigation.NavController
 import com.example.counterapp.ui.components.ScreenContent
@@ -18,9 +17,10 @@ import com.example.counterapp.viewmodel.MainViewModel
 
 @Composable
 fun HomeScreen(navController: NavController) {
-    val mainViewModel: MainViewModel = hiltViewModel()
-    val lifecycleOwner = LocalLifecycleOwner.current
     val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
+    
+    val mainViewModel = remember { MainViewModel(context) }
 
     val cameraController = remember {
         val cameraManager = CameraManager(ScanCode())

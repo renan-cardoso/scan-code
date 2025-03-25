@@ -8,10 +8,8 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import com.example.counterapp.utils.ScanCode
-import javax.inject.Inject
 
-
-class CameraManager @Inject constructor(
+class CameraManager(
     private val scanCode: ScanCode
 ) {
     private var cameraProvider: ProcessCameraProvider? = null

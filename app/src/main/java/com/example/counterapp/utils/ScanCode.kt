@@ -6,9 +6,8 @@ import com.google.zxing.NotFoundException
 import com.google.zxing.common.HybridBinarizer
 import androidx.camera.core.ImageProxy
 import com.google.zxing.PlanarYUVLuminanceSource
-import javax.inject.Inject
 
-class ScanCode @Inject constructor() {
+class ScanCode {
     fun decodeQRCode(imageProxy: ImageProxy): String? {
         val buffer = imageProxy.planes[0].buffer
         val bytes = ByteArray(buffer.capacity())

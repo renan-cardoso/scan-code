@@ -5,17 +5,12 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.counterapp.data.network.ConnectivityStatus
 import com.example.counterapp.utils.enums.ScanStatus
-import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import javax.inject.Inject
 
-
-@HiltViewModel
-class MainViewModel @Inject constructor(
-    @ApplicationContext private val context: Context
+class MainViewModel(
+    private val context: Context
 ) : ViewModel() {
     private val _scanStatus = MutableStateFlow<ScanStatus>(ScanStatus.IDLE)
     val scanStatus: StateFlow<ScanStatus> = _scanStatus.asStateFlow()
