@@ -9,10 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.counterapp.ui.navigation.AppNavigation
 import com.example.counterapp.utils.camera.CameraUtils
 import com.example.counterapp.utils.camera.CameraPermissionManager
-import dagger.hilt.android.AndroidEntryPoint
 
-
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
 

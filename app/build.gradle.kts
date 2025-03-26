@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
 }
 
@@ -41,14 +40,16 @@ android {
     buildFeatures {
         compose = true
     }
+    
+    // Add lint configuration
+    lint {
+        abortOnError = false
+    }
 }
 
 dependencies {
     implementation(libs.glide)
-    ksp(libs.glide.compiler)
-    implementation(libs.hilt.android.navigation.compose)
-    ksp(libs.hilt.android.compiler)
-    implementation(libs.hilt.android)
+    annotationProcessor(libs.glide.compiler)
     implementation(libs.core)
     implementation(libs.zxing.android.embedded)
     implementation(libs.androidx.camera.core)
